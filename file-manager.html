@@ -3,6 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Manager - Your Portfolio</title>
+    <title>File Manager - Portfolio</title>
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Portfolio File Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="highlight">Home</a></li>
+                <li><a href="#" class="highlight">Projects</a></li>
+                <li><a href="#" class="highlight">Resume</a></li>
+                <li><a href="#" class="highlight">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="file-manager-container">
+        <h2>File Manager</h2>
+        <p>Upload and manage files for your portfolio website.</p>
+
+        <div class="file-upload">
+            <h3>Upload File</h3>
+            <div class="file-upload-area" id="dropArea">
+                <p><i class="fas fa-cloud-upload-alt" style="font-size: 36px; color: #4A69BD;"></i></p>
+                <p>Drag and drop files here or click to browse</p>
+                <input type="file" id="fileInput" multiple>
+            </div>
+        </div>
+
+        <div class="file-list" id="fileList">
+            <h3>Your Files</h3>
+            <div class="file-item">
+                <div class="file-info">
+                    <p><i class="fas fa-file-alt"></i> index.md</p>
+                    <span class="file-type">Markdown</span>
+                </div>
+                <div class="file-actions">
+                    <button class="edit-btn" onclick="editFile('index.md')"><i class="fas fa-edit"></i> Edit</button>
+                    <button class="delete-btn" onclick="deleteFile('index.md')"><i class="fas fa-trash"></i> Delete</button>
+                </div>
+            </div>
+            <div class="file-item">
+                <div class="file-info">
+                    <p><i class="fas fa-file-code"></i> main.css</p>
+                    <span class="file-type">CSS</span>
+                </div>
+                <div class="file-actions">
+                    <button class="edit-btn" onclick="editFile('main.css')"><i class="fas fa-edit"></i> Edit</button>
+                    <button class="delete-btn" onclick="deleteFile('main.css')"><i class="fas fa-trash"></i> Delete</button>
+                </div>
+            </div>
+            <!-- More file items will be added dynamically via JavaScript -->
+        </div>
+
+        <div class="file-editor" id="fileEditor" style="display: none;">
+            <h3 id="editorTitle">Editing: <span id="currentFile"></span></h3>
+            <textarea id="fileContent"></textarea>
+            <div class="editor-actions">
+                <button class="cancel-btn" onclick="cancelEdit()">Cancel</button>
+                <button class="save-btn" onclick="saveFile()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="job-tracker">
+            <h3>Job Applications</h3>
+            <ul>
+                <li>Company A - Position 1</li>
+                <li>Company B - Position 2</li>
+                <li>Company C - Position 3</li>
+            </ul>
+        </div>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="js/file-manager.js"></script>
+</body>
+</html>
