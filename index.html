@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="main-header">
-        <a href="index.html" class="logo">Your Name</a>
-        <button class="mobile-menu-btn" id="mobile-menu-toggle">
-            <i class="fas fa-bars"></i>
-        </button>
+    <header>
+        <h1>Your Name</h1>
         <nav>
-            <ul id="main-nav">
+            <ul>
                 <li><a href="#journey" class="highlight">My Journey</a></li>
                 <li><a href="#workflow" class="highlight">Workflow</a></li>
                 <li><a href="#projects" class="highlight">Projects</a></li>
@@ -27,199 +23,86 @@
     </header>
 
     <section class="hero">
-        <h1>Hello, I'm Your Name</h1>
-        <p class="sub-headline">A passionate [Your Profession] dedicated to creating impactful solutions through innovative thinking and technical expertise.</p>
-        <a href="#contact" class="cta-button">Get In Touch</a>
+        <h1>Welcome to My Portfolio</h1>
+        <p class="sub-headline">I'm a [Your Profession] passionate about creating innovative solutions.</p>
     </section>
 
     <section class="my-journey" id="journey">
         <h2>My Journey</h2>
-        <p>Write a brief introduction about your professional journey, education, and experiences that shaped your career. This is your opportunity to tell your story and connect with visitors on a personal level.</p>
-        <p>Discuss your motivations, passion for your field, and what drives you to excel in your work. Share key milestones and transformative experiences that contributed to your professional growth.</p>
+        <p>Your journey text goes here. Talk about your education, experience, and what led you to your current career path.</p>
+        <p>Add more paragraphs as needed to tell your story.</p>
     </section>
 
     <section class="workflow-insights" id="workflow">
-        <h2>My Workflow & Process</h2>
-        <div class="insights-container">
-            <div class="insight-item">
-                <h3>Discovery & Research</h3>
-                <p>Describe your approach to the initial phase of projects, including research methods, stakeholder interviews, and problem definition techniques.</p>
-            </div>
-            <div class="insight-item">
-                <h3>Design & Planning</h3>
-                <p>Detail your design philosophy, planning process, and how you translate requirements into actionable plans and design solutions.</p>
-            </div>
-            <div class="insight-item">
-                <h3>Development</h3>
-                <p>Explain your development process, methodologies you follow, and tools you use to bring designs and plans to life.</p>
-            </div>
-            <div class="insight-item">
-                <h3>Testing & Refinement</h3>
-                <p>Share your approach to quality assurance, testing methods, and how you refine solutions based on feedback and testing results.</p>
-            </div>
+        <h2>My Workflow</h2>
+        
+        <div class="insight-item">
+            <h3>Research & Planning</h3>
+            <p>Description of your research and planning process.</p>
+        </div>
+        
+        <div class="insight-item">
+            <h3>Design & Development</h3>
+            <p>Details about how you approach design and development tasks.</p>
+        </div>
+        
+        <div class="insight-item">
+            <h3>Testing & Implementation</h3>
+            <p>How you ensure quality and implement your solutions.</p>
         </div>
     </section>
 
     <section class="knowledge-showcase" id="projects">
-        <h2>Featured Projects</h2>
-        <p>Explore some of my recent projects that demonstrate my skills, process, and the impact of my work.</p>
+        <h2>Projects</h2>
+        <p>Here are some of my recent projects that demonstrate my skills and expertise.</p>
         
         <div class="projects-grid">
-            <div class="project-card">
-                <a href="projects/project1.html">
-                    <img src="assets/images/placeholder-project.jpg" alt="Project 1">
-                    <div class="project-info">
-                        <h3>Project Title 1</h3>
-                        <p>Brief description of the project, highlighting key aspects and your role.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Skill 1</span>
-                            <span class="project-tag">Skill 2</span>
-                            <span class="project-tag">Skill 3</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <a href="projects/project1.html">
+                <img src="assets/images/placeholder-project.jpg" alt="Project 1">
+                <h3>Project Title 1</h3>
+            </a>
             
-            <div class="project-card">
-                <a href="projects/project2.html">
-                    <img src="assets/images/placeholder-project.jpg" alt="Project 2">
-                    <div class="project-info">
-                        <h3>Project Title 2</h3>
-                        <p>Brief description of the project, highlighting key aspects and your role.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Skill 1</span>
-                            <span class="project-tag">Skill 2</span>
-                            <span class="project-tag">Skill 3</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <a href="projects/project2.html">
+                <img src="assets/images/placeholder-project.jpg" alt="Project 2">
+                <h3>Project Title 2</h3>
+            </a>
             
-            <div class="project-card">
-                <a href="projects/project3.html">
-                    <img src="assets/images/placeholder-project.jpg" alt="Project 3">
-                    <div class="project-info">
-                        <h3>Project Title 3</h3>
-                        <p>Brief description of the project, highlighting key aspects and your role.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Skill 1</span>
-                            <span class="project-tag">Skill 2</span>
-                            <span class="project-tag">Skill 3</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <a href="projects/project3.html">
+                <img src="assets/images/placeholder-project.jpg" alt="Project 3">
+                <h3>Project Title 3</h3>
+            </a>
         </div>
     </section>
 
     <section class="resume" id="resume">
         <h2>Resume</h2>
-        <div class="resume-content">
-            <div class="resume-col">
-                <h3>Work Experience</h3>
-                
-                <div class="resume-item">
-                    <h4>Job Title</h4>
-                    <div class="date">Company Name | Jan 2020 - Present</div>
-                    <p>Description of your responsibilities and achievements in this role.</p>
-                </div>
-                
-                <div class="resume-item">
-                    <h4>Previous Job Title</h4>
-                    <div class="date">Company Name | Jun 2017 - Dec 2019</div>
-                    <p>Description of your responsibilities and achievements in this role.</p>
-                </div>
-            </div>
-            
-            <div class="resume-col">
-                <h3>Education</h3>
-                
-                <div class="resume-item">
-                    <h4>Degree Name</h4>
-                    <div class="date">University Name | 2013 - 2017</div>
-                    <p>Brief description of your studies, achievements, and relevant coursework.</p>
-                </div>
-                
-                <h3>Skills</h3>
-                
-                <div class="resume-item">
-                    <p><strong>Technical Skills:</strong> List your technical skills here</p>
-                    <p><strong>Soft Skills:</strong> List your soft skills here</p>
-                    <p><strong>Tools & Software:</strong> List the tools and software you're proficient in</p>
-                </div>
-            </div>
-        </div>
+        <p>Download my full resume <a href="assets/resume.pdf">here</a>.</p>
         
-        <a href="assets/yourname-resume.pdf" class="download-cv" target="_blank">Download Full Resume</a>
+        <h3>Skills</h3>
+        <ul>
+            <li>Skill 1</li>
+            <li>Skill 2</li>
+            <li>Skill 3</li>
+            <li>Skill 4</li>
+            <li>Skill 5</li>
+        </ul>
     </section>
 
     <section class="contact" id="contact">
-        <h2>Get In Touch</h2>
-        <p>Interested in working together or have questions about my work? Feel free to reach out using the form below or connect with me directly via email or social media.</p>
-        
-        <form class="contact-form" id="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me at <a href="mailto:your.email@example.com">your.email@example.com</a></p>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h3>About Me</h3>
-                <p>A brief summary about yourself and your professional focus. This is a chance to reinforce your personal brand.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            
-            <div class="footer-col job-tracker">
-                <h3>Recent Job Applications</h3>
-                <ul>
-                    <li>Company Name - Position (Date Applied)</li>
-                    <li>Company Name - Position (Date Applied)</li>
-                    <li>Company Name - Position (Date Applied)</li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#journey">My Journey</a></li>
-                    <li><a href="#workflow">Workflow</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="file-manager.html">File Manager</a></li>
-                </ul>
-            </div>
+        <div class="job-tracker">
+            <h3>Job Applications</h3>
+            <ul>
+                <li>Company A - Position 1</li>
+                <li>Company B - Position 2</li>
+                <li>Company C - Position 3</li>
+            </ul>
         </div>
-        
-        <div class="copyright">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
-        </div>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
