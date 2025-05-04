@@ -1,6 +1,15 @@
-/* TODO: Basic CSS reset or normalization */
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
 body {
-    font-family: 'Roboto Normal', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F4F3EE; /* Off-White */
@@ -8,13 +17,32 @@ body {
     line-height: 1.6;
 }
 
+/* Header and Navigation */
 header {
     background-color: #F4F3EE;
-    padding: 20px;
+    padding: 20px 5%;
     border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header.scrolled {
+    padding: 10px 5%;
+    background-color: rgba(244, 243, 238, 0.95);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4A69BD;
+    text-decoration: none;
 }
 
 nav ul {
@@ -31,105 +59,354 @@ nav li {
 nav a {
     text-decoration: none;
     color: #4A69BD; /* Steel Blue */
-    font-weight: bold;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
+nav a:hover {
+    color: #8FBC8F; /* Sea Green */
+}
+
+/* Animated underline effect */
+.highlight {
+    position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #8FBC8F;
+    transition: width 0.3s ease-in-out;
+}
+
+.highlight:hover::after {
+    width: 100%;
+}
+
+/* Mobile Navigation */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #4A69BD;
+}
+
+/* Hero Section */
 .hero {
     background-color: #E0F2F7; /* Light Steel Blue for a subtle background */
-    padding: 80px 20px;
+    padding: 100px 5%;
     text-align: center;
+    background-image: linear-gradient(rgba(224, 242, 247, 0.9), rgba(224, 242, 247, 0.9)), url('../assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
+    font-size: 3em;
     color: #4A69BD;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    animation: fadeIn 1s ease-in;
 }
 
 .hero .sub-headline {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1.5s ease-in;
 }
 
+.cta-button {
+    display: inline-block;
+    background-color: #8FBC8F;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: fadeIn 2s ease-in;
+}
+
+.cta-button:hover {
+    background-color: #4A69BD;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Main Content Sections */
 .my-journey, .workflow-insights, .knowledge-showcase, .resume, .contact {
-    padding: 40px 20px;
-    max-width: 960px;
+    padding: 60px 5%;
+    max-width: 1200px;
     margin: 0 auto;
+}
+
+section {
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2em;
+    font-size: 2.2em;
     color: #8FBC8F; /* Sea Green */
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-bottom: 2px solid #8FBC8F;
     padding-bottom: 10px;
+    display: inline-block;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Workflow Insights Section */
+.workflow-insights .insights-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .workflow-insights .insight-item {
     margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workflow-insights .insight-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .workflow-insights h3 {
     font-weight: bold;
     color: #4A69BD;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
 }
 
+/* Projects Grid */
 .knowledge-showcase .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.knowledge-showcase .project-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+}
+
+.knowledge-showcase .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .knowledge-showcase .projects-grid a {
     display: block;
     text-decoration: none;
     color: #222;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
 }
 
 .knowledge-showcase .projects-grid img {
     width: 100%;
     display: block;
-    aspect-ratio: 16 / 9; /* Standard aspect ratio for thumbnails */
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
+.project-info {
+    padding: 20px;
+}
+
 .knowledge-showcase .projects-grid h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #4A69BD;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.project-tag {
+    background-color: #E0F2F7;
+    color: #4A69BD;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* Resume Section */
+.resume .resume-content {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.resume .resume-col {
+    flex: 1;
+}
+
+.resume h3 {
+    color: #4A69BD;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.resume .resume-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.resume .resume-item:last-child {
+    border-bottom: none;
+}
+
+.resume h4 {
+    margin-bottom: 5px;
     font-size: 1.1em;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 0;
+}
+
+.resume .date {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 10px;
 }
 
 .resume a, .contact a {
     color: #8FBC8F;
     text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
-footer {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 40px;
+.resume a:hover, .contact a:hover {
+    color: #4A69BD;
 }
 
-footer .job-tracker {
+.download-cv {
+    display: inline-block;
+    background-color: #4A69BD;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.download-cv:hover {
+    background-color: #8FBC8F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Contact Section */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
 
-footer .job-tracker h3 {
-    color: #4A69BD;
-    font-size: 1.1em;
-    margin-bottom: 10px;
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    min-height: 150px;
+}
+
+.submit-btn {
+    background-color: #8FBC8F;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #4A69BD;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    padding: 40px 5%;
+    color: #f0f0f0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+footer h3 {
+    color: #8FBC8F;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
 }
 
 footer .job-tracker ul {
@@ -139,28 +416,259 @@ footer .job-tracker ul {
 }
 
 footer .job-tracker li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
 }
 
-/* TODO: Add responsive design adjustments (media queries) */
-
-/* TODO: Add styles for the animated highlight/underline */
-.highlight {
-    /* Example style */
-    position: relative;
+footer .job-tracker li:last-child {
+    border-bottom: none;
 }
 
-.highlight::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0%;
-    height: 2px;
-    background-color: #8FBC8F;
-    transition: width 0.3s ease-in-out;
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
 }
 
-.highlight:hover::after {
+.social-links a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #8FBC8F;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    font-size: 0.9em;
+}
+
+/* File Upload Component */
+.file-upload {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.file-upload h3 {
+    color: #4A69BD;
+    margin-bottom: 15px;
+}
+
+.file-upload-area {
+    border: 2px dashed #ddd;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.file-upload-area:hover {
+    border-color: #8FBC8F;
+    background-color: rgba(143, 188, 143, 0.05);
+}
+
+.file-upload-area p {
+    margin-bottom: 10px;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-list {
+    margin-top: 20px;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.file-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.file-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #4A69BD;
+    transition: color 0.3s ease;
+}
+
+.file-actions button:hover {
+    color: #8FBC8F;
+}
+
+/* Editor Component */
+.file-editor {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.file-editor h3 {
+    color: #4A69BD;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-editor textarea {
     width: 100%;
+    height: 400px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+.editor-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.editor-actions button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.save-btn {
+    background-color: #8FBC8F;
+    color: white;
+    border: none;
+}
+
+.save-btn:hover {
+    background-color: #79a879;
+}
+
+.cancel-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.cancel-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #F4F3EE;
+        flex-direction: column;
+        text-align: center;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+        z-index: 99;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+    
+    nav ul.active {
+        transform: translateY(0);
+    }
+    
+    nav li {
+        margin: 15px 0;
+    }
+    
+    .hero {
+        padding: 60px 5%;
+    }
+    
+    .hero h1 {
+        font-size: 2.2em;
+    }
+    
+    .hero .sub-headline {
+        font-size: 1.1em;
+    }
+    
+    .my-journey, .workflow-insights, .knowledge-showcase, .resume, .contact {
+        padding: 40px 5%;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    .resume .resume-content {
+        flex-direction: column;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8em;
+    }
+    
+    .hero .sub-headline {
+        font-size: 1em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    .knowledge-showcase .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-button, .download-cv, .submit-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 }
